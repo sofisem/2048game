@@ -76,7 +76,7 @@ public class GameField {
 
         for (int x = 0; x < 4; ++x) {
             for (int y = 0; y < 4; ++y) {
-                result[x][y] = theField[x][3 - y];
+                result[x][y] = theField[y][3 - x];
             }
         }
         theField = result;

@@ -52,10 +52,9 @@ public class Main extends Application  {
                 }
 
                 if (event.getCode() == KeyCode.B) {
-
-                gameField.reverseField();
-                fieldtoButmas();
-                System.out.println(theField);
+                    System.out.println("b");
+                    gameField.reverseField();
+                    fieldtoButmas();
 
                 }
 

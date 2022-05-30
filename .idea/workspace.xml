@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d0dda6-3136-4829-8eeb-6013160a38f2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Cells.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Compress.java" afterDir="false" />
+    <list default="true" id="e5d0dda6-3136-4829-8eeb-6013160a38f2" name="Changes" comment="reverse -">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" afterDir="false" />
@@ -130,8 +126,16 @@
       <workItem from="1652193604763" duration="27884000" />
       <workItem from="1652868860052" duration="4890000" />
       <workItem from="1653056366842" duration="12166000" />
-      <workItem from="1653671617217" duration="43693000" />
+      <workItem from="1653671617217" duration="45153000" />
     </task>
+    <task id="LOCAL-00001" summary="reverse -">
+      <created>1653920435049</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1653920435049</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,12 +152,16 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="reverse -" />
+    <option name="LAST_COMMIT_MESSAGE" value="reverse -" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java</url>
-          <line>98</line>
+          <line>97</line>
           <properties class="ru.ac.uniyar.apps.fxappone.Main" method="colorCells">
             <option name="EMULATED" value="true" />
           </properties>
