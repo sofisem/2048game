@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5d0dda6-3136-4829-8eeb-6013160a38f2" name="Changes" comment="" />
+    <list default="true" id="e5d0dda6-3136-4829-8eeb-6013160a38f2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Cells.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Compress.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +62,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -63,6 +74,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="27tM5GK97PkazEG8L5w4whQTGbs" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -70,8 +82,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../game2048fx" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="game2 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -79,7 +93,7 @@
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="--scan" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -116,19 +130,30 @@
       <workItem from="1652193604763" duration="27884000" />
       <workItem from="1652868860052" duration="4890000" />
       <workItem from="1653056366842" duration="12166000" />
-      <workItem from="1653671617217" duration="11361000" />
+      <workItem from="1653671617217" duration="43693000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java</url>
-          <line>109</line>
+          <line>98</line>
           <properties class="ru.ac.uniyar.apps.fxappone.Main" method="colorCells">
             <option name="EMULATED" value="true" />
           </properties>

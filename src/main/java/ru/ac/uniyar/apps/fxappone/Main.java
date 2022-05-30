@@ -3,40 +3,36 @@ import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
-import java.util.*;
 import javafx.scene.Group;
-import java.util.ArrayList;
 import java.util.Random;
-import javafx.scene.input.KeyEvent;
 
 public class Main extends Application  {
     public Button[] btns = new Button[16];
-    public static GameField gameField;
+    public GameField gameField = new GameField();
+    private int[][] theField = gameField.getGameField();
 
     private int rndarr = getRandomNumber(4);
 
-    private static int btnsize = 50;
+
+
+    private  int btnsize = 50;
 
     public int getRandomNumber(int value){
         Random r = new Random();
         int result = r.nextInt(value);
         return result;
-
     }
 
-
-  
     @Override
     public void start(Stage primaryStage) throws Exception{
         initBtnsArray();
-        createNewCell();
-        createNewCell();
-
-        System.out.println(btns);
+        System.out.println(gameField);
+        gameField.start();
+        fieldtoButmas();
         Group group = new Group();
         group.getChildren().add(getGrid());
         Button btnstart = new Button("start");
@@ -50,14 +46,22 @@ public class Main extends Application  {
         primaryStage.show();
         scene.setOnKeyPressed(event ->  {
                 if (event.getCode() == KeyCode.A) {
-                    System.out.println("наверх");
-                    gameField.moveUp();
-                    gameField.fieldtoButmas();
+                    System.out.println(theField[1][0]);
+                    gameField.moveLeft();
+                    fieldtoButmas();
+                }
+
+                if (event.getCode() == KeyCode.B) {
+
+                gameField.reverseField();
+                fieldtoButmas();
+                System.out.println(theField);
 
                 }
 
         });
     }
+
 
 
     private Pane getGrid() {
@@ -86,22 +90,7 @@ public class Main extends Application  {
 
     }
 
-    public void createNewCell() { //создание новых ячеек
-            boolean isCreated = false;
-            String str = "";
-            Button btn = btns[getRandomNumber(16)];
-            do {
-                int state = getRandomNumber(10) < 9 ? 2 : 4;
-                String strstate = Integer.toString(state);
-                if (str.equals(btn.getText())) {
-                    btn.setText(strstate);
-                    colorCells();
-                    isCreated = true;
-                }
-            }
-            while (!isCreated);
 
-    }
 
 
 
@@ -109,6 +98,10 @@ public class Main extends Application  {
 
     public void colorCells(){
         for (int i =0; i< 16; i++){
+
+            if (btns[i].getText().equals("")){
+                btns[i].setStyle("-fx-background-color: transparent");
+            }
 
             if (btns[i].getText().equals("2")){
                 btns[i].setStyle("-fx-background-color: blue");
@@ -142,6 +135,21 @@ public class Main extends Application  {
             }
             if (btns[i].getText().equals("32")){
                 btns[i].setStyle("-fx-background-color: beige");
+            }
+        }
+    }
+
+    public void fieldtoButmas(){
+        int x = 0;
+        for (int i = 0 ;i < 4; i++){
+            for (int j = 0 ;j < 4; j++){
+                btns[x].setText(Integer.toString(theField[i][j]));
+                if (theField[i][j]==0){
+                    btns[x].setText("");
+                }
+                x++;
+                colorCells();
+
             }
         }
     }

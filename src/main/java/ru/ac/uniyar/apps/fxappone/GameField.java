@@ -1,137 +1,105 @@
 package ru.ac.uniyar.apps.fxappone;
 
-import javafx.scene.control.Button;
-
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-import java.util.LinkedList;
 import java.util.Random;
 
-public class GameField  extends Main {
+public class GameField {
     private int[][] theField = new int[4][4];
+    public int[][] gameField = theField;
+    Random r = new Random();
 
-
-
-    public GameField(){
+    public GameField() {
         int score = 0;
         theField = new int[4][4];
-        int x=0;
-        for(int i=0; i<theField.length;i++){
-            for(int j=0; j<theField[i].length; j++){
-                theField[i][j]=Integer.valueOf(btns[x].getText());
-                if (btns[x].getText().equals("")){
-                    theField[i][j]=0;
-                }
-                x++;
-
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                theField[i][j] = 0;
             }
+
         }
     }
 
+    public int[][] getGameField() {
+        return theField;
+    }
 
-    private void moveLeft() {
-        boolean isNewNumberNeeded = false;
-        for (int[] row : theField) {
-            boolean wasCompressed = compress(row);
-            boolean wasMerged = mergeRow(row);
+
+    public void moveLeft() {
+        boolean createNewCell = false;
+        for (int[] line : theField) {
+            boolean wasCompressed = compressLine(line);
+            boolean wasMerged = mergeLine(line);
             if (wasMerged) {
-                compress(row);
+                compressLine(line);
             }
             if (wasCompressed || wasMerged) {
-                isNewNumberNeeded = true;
+                createNewCell = true;
             }
         }
-        if (isNewNumberNeeded) {
-            fieldtoButmas();
+        if (createNewCell) {
             createNewCells();
         }
     }
 
-    public boolean compress(int[] row) {
+    private boolean compressLine(int[] line) {
         int insertPosition = 0;
         boolean result = false;
         for (int x = 0; x < 4; x++) {
-            for (int i=0; i < 16; i++) {
-                if (row[x] > 0) {
-                    if (x != insertPosition) {
-                        row[insertPosition] = row[x];
-                        row[x] = 0;
-                        result = true;
-                    }
-                    insertPosition++;
+            if (line[x] > 0) {
+                if (x != insertPosition) {
+                    line[insertPosition] = line[x];
+                    line[x] = 0;
+                    result = true;
                 }
+                insertPosition++;
             }
         }
         return result;
-
     }
 
-    public boolean mergeRow(int[] row) {
+    private boolean mergeLine(int[] line) {
         boolean result = false;
-        for (int i = 0; i < row.length - 1; i++) {
-            if (row[i] != 0 && row[i] == row[i + 1]) {
-                row[i] += row[i + 1];
-                row[i + 1] = 0;
+        for (int i = 0; i < 3; i++) {
+            if (line[i] != 0 && line[i] == line[i + 1]) {
+                line[i] += line[i + 1];
+                line[i + 1] = 0;
                 result = true;
-
             }
         }
         return result;
     }
 
-    public void fieldtoButmas(){
-        for (int i = 0 ;i < 4; i++){
-            for (int j = 0 ;j < 4; j++){
-                int x = 0;
-                btns[x].setText(Integer.toString(theField[i][j]));
-                x++;
 
-            }
-        }
-    }
 
-    public void reverse() {
+
+    public void reverseField() {
         int[][] result = new int[4][4];
-        for (int i = 0; i < 4; i++) {
-            for (int j = 0; j < 4; j++) {
-                result[j][4 - 1 - i] = theField[i][j];
+
+        for (int x = 0; x < 4; ++x) {
+            for (int y = 0; y < 4; ++y) {
+                result[x][y] = theField[x][3 - y];
             }
         }
         theField = result;
     }
 
-    public void moveUp() {
-        reverse();
-        reverse();
-        reverse();
-        moveLeft();
-        reverse();
 
-    }
 
-    private void moveRight() {
-        reverse();
-        reverse();
-        moveLeft();
-        reverse();
-        reverse();
 
-    }
 
-    private void moveDown() {
-        reverse();
-        moveLeft();
-        reverse();
-        reverse();
-        reverse();
+
+
+
+
+    public int getRandomNumber(int value){
+        Random r = new Random();
+        int result = r.nextInt(value);
+        return result;
 
     }
 
 
 
-
-    private void createNewCells() {
+    public void createNewCells() {
         boolean isCreated = false;
         do {
             int x = getRandomNumber(4);
@@ -142,6 +110,13 @@ public class GameField  extends Main {
             }
         }
         while (!isCreated);
+    }
+
+
+    public void start(){
+        createNewCells();
+        createNewCells();
+
     }
 
 
