@@ -2,24 +2,29 @@ package ru.ac.uniyar.apps.fxappone;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.scene.Group;
 import java.util.Random;
 
+import static javax.swing.JOptionPane.showMessageDialog;
+
 public class Main extends Application  {
     public Button[] btns = new Button[16];
     public GameField gameField = new GameField();
     private int[][] theField = gameField.getGameField();
+    private int score = gameField.getScore();
 
     private int rndarr = getRandomNumber(4);
 
 
 
-    private  int btnsize = 50;
+    private  int btnsize = 100;
 
     public int getRandomNumber(int value){
         Random r = new Random();
@@ -35,28 +40,76 @@ public class Main extends Application  {
         fieldtoButmas();
         Group group = new Group();
         group.getChildren().add(getGrid());
-        Button btnstart = new Button("start");
-        Button score = new Button("score:");
-        group.getChildren().add(btnstart);
-        btnstart.setLayoutX(60);
-        btnstart.setLayoutY(210);
+        Button scoree = new Button("score: 0");
+        Button win = new Button("Wow, you've won!");
+        win.setLayoutX(150);
+        win.setLayoutY(220);
+        scoree.setMaxWidth(400);
+        scoree.setMaxHeight(400);
+        win.setStyle("-fx-background-color: white");
+        scoree.setStyle("-fx-background-color: white; -fx-font-size: 30");
+        group.getChildren().add(scoree);
+        scoree.setLayoutX(130);
+        scoree.setLayoutY(440);
         Scene scene = new Scene(group);
         primaryStage.setTitle("2048");
         primaryStage.setScene(scene);
         primaryStage.show();
         scene.setOnKeyPressed(event ->  {
+            if (gameField.endgame()){
+                System.out.println("end");
+                gameField.clear();
+                gameField.start();
+                fieldtoButmas();}
+
                 if (event.getCode() == KeyCode.A) {
-                    System.out.println(theField[1][0]);
                     gameField.moveLeft();
+                    System.out.println(gameField.getScore());
+                    theField = gameField.getGameField();
                     fieldtoButmas();
+
                 }
 
                 if (event.getCode() == KeyCode.B) {
-                    System.out.println("b");
+                    System.out.println("вниз");
                     gameField.reverseField();
+                    gameField.reverseField();
+                    gameField.reverseField();
+                    gameField.moveLeft();
+                    gameField.reverseField();
+                    theField = gameField.getGameField();
                     fieldtoButmas();
 
                 }
+            if (event.getCode() == KeyCode.C) {
+                System.out.println("вправо");
+                gameField.reverseField();
+                gameField.reverseField();
+                gameField.moveLeft();
+                gameField.reverseField();
+                gameField.reverseField();
+                theField = gameField.getGameField();
+                fieldtoButmas();
+            }
+
+            if (event.getCode() == KeyCode.D) {
+                System.out.println("вверх");
+                gameField.reverseField();
+                gameField.moveLeft();
+                gameField.reverseField();
+                gameField.reverseField();
+                gameField.reverseField();
+                theField = gameField.getGameField();
+                fieldtoButmas();
+            }
+            int score = gameField.getScore();
+            String sc = String.valueOf(score);
+            scoree.setText("score: " + sc);
+            if (gameField.win()){
+                System.out.println("win");
+                gameField.clear();
+                group.getChildren().add(win);
+                fieldtoButmas();}
 
         });
     }
@@ -99,41 +152,46 @@ public class Main extends Application  {
         for (int i =0; i< 16; i++){
 
             if (btns[i].getText().equals("")){
-                btns[i].setStyle("-fx-background-color: transparent");
+                btns[i].setStyle("-fx-background-color: transparent; -fx-font-size: 30");
             }
 
             if (btns[i].getText().equals("2")){
-                btns[i].setStyle("-fx-background-color: blue");
+                btns[i].setStyle("-fx-background-color: plum; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("4")){
-                btns[i].setStyle("-fx-background-color: plum");
+                btns[i].setStyle("-fx-background-color: lightpink; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("8")){
-                btns[i].setStyle("-fx-background-color: slateblue");
+                btns[i].setStyle("-fx-background-color: lightblue; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("16")){
-                btns[i].setStyle("-fx-background-color: darkturquoise");
+                btns[i].setStyle("-fx-background-color: darkturquoise; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("32")){
-                btns[i].setStyle("-fx-background-color: limegreen");
+                btns[i].setStyle("-fx-background-color: teal; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("64")){
-                btns[i].setStyle("-fx-background-color: purple");
+                btns[i].setStyle("-fx-background-color: lavender; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("128")){
-                btns[i].setStyle("-fx-background-color: orange");
+                btns[i].setStyle("-fx-background-color: orange; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("256")){
-                btns[i].setStyle("-fx-background-color: lightblue");
+                btns[i].setStyle("-fx-background-color: lightblue; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("512")){
-                btns[i].setStyle("-fx-background-color: tan");
+                btns[i].setStyle("-fx-background-color: tan; -fx-font-size: 30");
             }
             if (btns[i].getText().equals("1024")){
-                btns[i].setStyle("-fx-background-color: red");
+                btns[i].setStyle("-fx-background-color: lightgreen; -fx-font-size: 30");
             }
+
+            if (btns[i].getText().equals("2048")){
+                btns[i].setStyle("-fx-background-color: deepskyblue; -fx-font-size: 30");
+            }
+
             if (btns[i].getText().equals("32")){
-                btns[i].setStyle("-fx-background-color: beige");
+                btns[i].setStyle("-fx-background-color: beige; -fx-font-size: 30");
             }
         }
     }

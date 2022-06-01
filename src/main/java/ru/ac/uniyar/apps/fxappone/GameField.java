@@ -6,6 +6,7 @@ public class GameField {
     private int[][] theField = new int[4][4];
     public int[][] gameField = theField;
     Random r = new Random();
+    private int score = 0 ;
 
     public GameField() {
         int score = 0;
@@ -18,10 +19,33 @@ public class GameField {
         }
     }
 
+    public void clear(){
+        setScore(0);
+        theField = getGameField();
+        for (int i = 0; i < 4; i++) {
+            for (int j = 0; j < 4; j++) {
+                theField[i][j] = 0;
+            }
+
+        }
+    }
+
+
     public int[][] getGameField() {
         return theField;
     }
 
+    public void setGameField(int[][] theField) {
+        this.theField = theField;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public int getScore(){
+        return score;
+    }
 
     public void moveLeft() {
         boolean createNewCell = false;
@@ -62,14 +86,14 @@ public class GameField {
             if (line[i] != 0 && line[i] == line[i + 1]) {
                 line[i] += line[i + 1];
                 line[i + 1] = 0;
+                score += line[i];
+                setScore(score);
                 result = true;
             }
         }
+
         return result;
     }
-
-
-
 
     public void reverseField() {
         int[][] result = new int[4][4];
@@ -80,23 +104,44 @@ public class GameField {
             }
         }
         theField = result;
+        getGameField();
     }
 
+    public boolean endgame(){
+        boolean end = false;
+        int i = 0;
+        for (int x = 0; x<4; x++){
+            for (int y = 0; y<4; y++) {
+                if (theField[x][y] != 0){
+                    i++;
+                }
+            }
+        }
+        if (i == 16){
+            end = true;
 
+        }
+        return end;
+    }
 
-
-
-
-
-
+    public boolean win(){
+        boolean win = false;
+        int i = 0;
+        for (int x = 0; x<4; x++){
+            for (int y = 0; y<4; y++) {
+                if (theField[x][y] == 2048){
+                    win = true;
+                }
+            }
+        }
+        return win;
+    }
 
     public int getRandomNumber(int value){
         Random r = new Random();
         int result = r.nextInt(value);
         return result;
-
     }
-
 
 
     public void createNewCells() {
@@ -118,16 +163,6 @@ public class GameField {
         createNewCells();
 
     }
-
-
-
-
-
-
-
-
-
-
 
 
 }
