@@ -56,11 +56,6 @@ public class Main extends Application  {
         primaryStage.setScene(scene);
         primaryStage.show();
         scene.setOnKeyPressed(event ->  {
-            if (gameField.endgame()){
-                System.out.println("end");
-                gameField.clear();
-                gameField.start();
-                fieldtoButmas();}
 
                 if (event.getCode() == KeyCode.A) {
                     gameField.moveLeft();
@@ -110,6 +105,12 @@ public class Main extends Application  {
                 gameField.clear();
                 group.getChildren().add(win);
                 fieldtoButmas();}
+            if (gameField.endgame()){
+                System.out.println("end");
+                gameField.clear();
+                gameField.start();
+                fieldtoButmas();}
+
 
         });
     }
