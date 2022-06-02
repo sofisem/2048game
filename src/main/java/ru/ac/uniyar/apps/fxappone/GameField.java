@@ -137,14 +137,14 @@ public class GameField {
         return win;
     }
 
-    public int getRandomNumber(int value){
+    private int getRandomNumber(int value){
         Random r = new Random();
         int result = r.nextInt(value);
         return result;
     }
 
 
-    public void createNewCells() {
+    private void createNewCells() {
         boolean isCreated = false;
         do {
             int x = getRandomNumber(4);

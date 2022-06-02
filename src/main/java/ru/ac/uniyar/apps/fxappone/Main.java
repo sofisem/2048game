@@ -26,7 +26,7 @@ public class Main extends Application  {
 
     private  int btnsize = 100;
 
-    public int getRandomNumber(int value){
+    private int getRandomNumber(int value){
         Random r = new Random();
         int result = r.nextInt(value);
         return result;
@@ -148,7 +148,7 @@ public class Main extends Application  {
 
 
 
-    public void colorCells(){
+    private void colorCells(){
         for (int i =0; i< 16; i++){
 
             if (btns[i].getText().equals("")){
@@ -196,7 +196,7 @@ public class Main extends Application  {
         }
     }
 
-    public void fieldtoButmas(){
+    private void fieldtoButmas(){
         int x = 0;
         for (int i = 0 ;i < 4; i++){
             for (int j = 0 ;j < 4; j++){
