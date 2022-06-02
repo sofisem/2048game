@@ -158,7 +158,6 @@ public class GameField {
         while (!isCreated);
     }
 
-
     public void start(){
         createNewCells();
         createNewCells();

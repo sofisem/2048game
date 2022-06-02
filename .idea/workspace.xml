@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e5d0dda6-3136-4829-8eeb-6013160a38f2" name="Changes" comment="new">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +213,7 @@
       <workItem from="1653671617217" duration="52661000" />
       <workItem from="1653995461016" duration="6330000" />
       <workItem from="1654003338314" duration="10130000" />
-      <workItem from="1654089633698" duration="7894000" />
+      <workItem from="1654089633698" duration="8236000" />
     </task>
     <task id="LOCAL-00001" summary="reverse -">
       <created>1653920435049</created>
@@ -257,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654156444149</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="new">
+      <created>1654157203455</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1654157203455</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -10,6 +10,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.layout.*;
 import javafx.scene.Group;
+
+import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -212,8 +215,33 @@ public class Main extends Application  {
     }
 
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Main main = (Main) o;
+        return score == main.score && rndarr == main.rndarr && btnsize == main.btnsize && Arrays.equals(btns, main.btns) && Objects.equals(gameField, main.gameField) && Arrays.equals(theField, main.theField);
+    }
 
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(gameField, score, rndarr, btnsize);
+        result = 31 * result + Arrays.hashCode(btns);
+        result = 31 * result + Arrays.hashCode(theField);
+        return result;
+    }
 
+    @Override
+    public String toString() {
+        return "Main{" +
+                "btns=" + Arrays.toString(btns) +
+                ", gameField=" + gameField +
+                ", theField=" + Arrays.toString(theField) +
+                ", score=" + score +
+                ", rndarr=" + rndarr +
+                ", btnsize=" + btnsize +
+                '}';
+    }
 
     public static void main(String[] args) {
         launch(args);
@@ -221,6 +249,8 @@ public class Main extends Application  {
 
 
 }
+
+
 
 
 
