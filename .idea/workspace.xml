@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5d0dda6-3136-4829-8eeb-6013160a38f2" name="Changes" comment="mod">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/GameField.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +86,7 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
-  <component name="RunManager" selected="Gradle.test.gameend">
+  <component name="RunManager" selected="Gradle.game2 [test]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ru.ac.uniyar.apps.fxappone.Main" />
       <module name="game2" />
@@ -188,8 +189,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.test.gameend" />
         <item itemvalue="Gradle.game2 [test]" />
+        <item itemvalue="Gradle.test.gameend" />
         <item itemvalue="Gradle.test" />
         <item itemvalue="Gradle.game2 [dependencies]" />
         <item itemvalue="Application.Main" />
@@ -214,7 +215,7 @@
       <workItem from="1653671617217" duration="52661000" />
       <workItem from="1653995461016" duration="6330000" />
       <workItem from="1654003338314" duration="10130000" />
-      <workItem from="1654089633698" duration="4139000" />
+      <workItem from="1654089633698" duration="7089000" />
     </task>
     <task id="LOCAL-00001" summary="reverse -">
       <created>1653920435049</created>
@@ -244,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1654149429976</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mod">
+      <created>1654153406995</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1654153406995</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,7 +282,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/ru/ac/uniyar/apps/fxappone/Main.java</url>
-          <line>151</line>
+          <line>154</line>
           <properties class="ru.ac.uniyar.apps.fxappone.Main" method="colorCells">
             <option name="EMULATED" value="true" />
           </properties>

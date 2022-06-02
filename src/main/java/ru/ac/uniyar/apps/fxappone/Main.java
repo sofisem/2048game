@@ -49,7 +49,7 @@ public class Main extends Application  {
         win.setStyle("-fx-background-color: white");
         scoree.setStyle("-fx-background-color: white; -fx-font-size: 30");
         group.getChildren().add(scoree);
-        scoree.setLayoutX(130);
+        scoree.setLayoutX(125);
         scoree.setLayoutY(440);
         Scene scene = new Scene(group);
         primaryStage.setTitle("2048");
@@ -57,7 +57,7 @@ public class Main extends Application  {
         primaryStage.show();
         scene.setOnKeyPressed(event ->  {
 
-                if (event.getCode() == KeyCode.A) {
+            if (event.getCode() == KeyCode.A) {
                     gameField.moveLeft();
                     System.out.println(gameField.getScore());
                     theField = gameField.getGameField();
@@ -105,11 +105,10 @@ public class Main extends Application  {
                 gameField.clear();
                 group.getChildren().add(win);
                 fieldtoButmas();}
+
             if (gameField.endgame()){
-                System.out.println("end");
-                gameField.clear();
-                gameField.start();
-                fieldtoButmas();}
+                primaryStage.close();}
+
 
 
         });
